@@ -1,0 +1,5 @@
+Za nalogo, bi iz podanega seznama toèk, sestavil ravnino iz nakljuènih toèk in preveril za ostale toèke, èe 
+so prav tako vsebovani v ravnini. Nato bi narisal ravnino z dvema premicama, od katerih ena leži na ravnini, 
+druga jo pa prebada. Na koncu bi narisal kvadrat v ravnini, tako da povežem toèke. Skušal bi ustvariti kocko,
+s tem da je normala v vlogi pokonènih stranic, osnovna ploskev bi pa bila tudi vrhnja ploskev. Uporabil bi funkcijo
+Manipulate, za dvigovanje in stiskanje kocke.
