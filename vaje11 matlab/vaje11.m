@@ -1,3 +1,4 @@
+% 1. naloga
 podatki = dlmread('kolokviji.csv', ';')
 
 vsota = sum(podatki,2)
@@ -10,28 +11,48 @@ rezultat = [zaporedje, podatki, vsota, povprecje, ocene]
 
 dlmwrite('rezultati.csv',rezultat,';')
 
+%2. naloga
+pkg install -forge io
 pkg install -forge statistics
 pkg load statistics
-%alternativa 1
+
+% alternativa 1
 frekvence = tabulate(ocene)
 
-histogram = hist(ocene)
-%alternativa 2
-izracunaj = @(n)length(ocene(ocene==n))
-arrayfun(izracuna, 6:10) %'map' za methlab
+% alternativa 2
+izracunaj = @(n) length(ocene(ocene==n))
+arrayfun(izracunaj, 6:10)  % 'map' za matlab
 
-for n=6:10
-  frekvence(n-5)=length(ocene(ocene==n))
+% alternativa 3
+frekvence = zeros(1, 5)
+for n = 6:10
+  frekvence(n-5) = length(ocene(ocene==n))
 end
 
-%class(frekvence)
 
-slika=figure()
-bar(6:10,frekvence,'facecolor','r','edgecolor','b')
+class(frekvence)
+
+bar(6:10, frekvence(6:10, 3))
+
+slika = figure()
+bar(6:10, frekvence(6:10, 3), 'facecolor', 'r', 'edgecolor', 'b')
 title('Porazdelitev ocen kolokvija')
-xlabel
-ylabel
+xlabel ("Ocene");
+ylabel ("Stevilo studentov");
+text (10, 10, "Bravo!");
+print(slika, 'slika.pdf')
 
-% 3. naloga, matrika zeros n, for zanka 1-n, 1-l.
-%4. naloga, minimum, maksimum. ali je sedlo funkcija. dvojna for zanka za preverjanje sedla.
-%
+% 3. naloga
+A=narascujoca(4)
+ali_je_sedlo(A,1,1)
+stevilo_sedel(A)
+stevilo_sedel2(A)
+cas1_zacetek = tic; stevilo_sedel(A); cas1_konec = toc;
+cas2_zacetek = tic; stevilo_sedel2(A); cas2_konec = cas2 = toc;
+razlika_casov = (cas1_konec - cas1_zacetek) - (cas2_konec - cas2_zacetek)
+%4. naloga
+rotacija(phi)
+%5. naloga
+a=[-3:3]
+b=a.^3
+T=[a;b]
